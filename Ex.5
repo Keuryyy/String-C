@@ -1,0 +1,30 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <math.h>
+#include <string.h>
+#include <ctype.h>
+
+int main(){
+
+    char palavra[30];
+    int verificador = 0;
+    int i;
+
+    printf("Digite uma palavra: ");
+    gets(palavra);
+
+    for(i = 0; i < strlen(palavra); i++){
+
+        if(palavra[i] == palavra[strlen(palavra) -1 -i]){
+            verificador++;
+        }else{
+            verificador = 0;
+        }
+    }
+
+    if(verificador == strlen(palavra)){
+        printf("A palavra %s eh um palindromo\n", palavra);
+    }else{
+        printf("A palavra %s nao eh um palindromo\n", palavra);
+    }
+}}
